@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="d3SystemGraph">
+<head>
+    <title>System Graph</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        .link {
+            fill: none;
+            stroke: #3c753b;
+            stroke-width: 1.5px;
+        }
+
+        #chart {
+            margin: 0 auto;
+            width: 65%;
+        }
+        
+        
+        svg {
+            border: 1px solid #000;
+            margin: 28px;
+        }
+        
+    </style>
+    <script type="text/javascript" src="underscore.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/modules/underscore.js"></script>
+    <script type="text/javascript" src="angular/modules/d3.js"></script>
+    <script type="text/javascript" src="angular/modules/app.js"></script>
+    <script type="text/javascript" src="angular/directive/d3GraphDirective.js"></script>
+</head>
+<body>
+    <center><h1>D3 Graph section</h1></center>
+    <div id="chart"></div>
+    <system-graph></system-graph>
+</body>
+</html>
+
