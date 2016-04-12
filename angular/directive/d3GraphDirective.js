@@ -19,12 +19,10 @@
                     .then(function(result){
                         setTimeout(function(){
                             createGraph(element, result.data);
-                        },1000);
+                        },795);
                     },function(error){
                         console.log("Error Raised", error);
-                    });
-                    
-                    
+                    });                    
                 });
             }
         }
@@ -34,13 +32,15 @@
         /**
         *  Working on d3Graph section
         **/
-        var data = [] , nodes = [], width = 770, height = 420, rwidth = 120, rheight= 75, gap = 50, radius = 10;
+        var data = [] , nodes = [], rwidth = 120, rheight= 75, gap = 50, radius = 10;
         data.push(apiData);
-        
+
         //Make an SVG Container
         var svgContainer = d3.select('#chart').append("svg")
-                            .attr("width", width)
-                            .attr("height", height)
+                            .classed("svg-container", true)
+                            .attr("preserveAspectRatio", "xMinYMin meet")
+                            .attr("viewBox", "-12 1 795 394")
+                            .classed("svg-content-responsive", true)
                             .append("g");
         
         data.forEach(function(d,i){
@@ -51,6 +51,7 @@
                     return _.object(_.zip(["Level", "children"], currentItem));
                 })
                 .value();
+                
             //creating the links between nodes
             _.map(nodes,function(l,i){
                 _.map(l.children,function(c,i){
